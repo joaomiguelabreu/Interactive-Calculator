@@ -1,0 +1,213 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Orbitron', sans-serif;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: #0a0f14;
+    color: #00ffcc;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #0a0f14, #1a1f24);
+}
+
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+#themeButton {
+    background-color: #1a1f24;
+    color: #00ffcc;
+    border: 2px solid #00ffcc;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.theme-dropdown {
+    display: none;
+    position: absolute;
+    background-color: #1a1f24;
+    border: 2px solid #00ffcc;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.theme-dropdown button {
+    background-color: #1a1f24;
+    color: #00ffcc;
+    border: none;
+    padding: 10px 20px;
+    width: 100%;
+    cursor: pointer;
+    text-align: left;
+    font-size: 16px;
+}
+
+.theme-dropdown button:hover {
+    background-color: #00ffcc;
+    color: #1a1f24;
+}
+
+/* Tema Cyberpunk */
+.calculator {
+    position: relative;
+    background-color: #1a1f24;
+    padding: 20px;
+    border-radius: 10px;
+    /* box-shadow: 0px 0px 30px 5px #00ffcc; */
+}
+
+.calculator form input {
+    border: none;
+    outline: none;
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    background: #0a0f14;
+    font-size: 20px;
+    color: #00ffcc;
+    cursor: pointer;
+    margin: 10px;
+    box-shadow: inset -4px -4px 10px #1a1f24, inset 4px 4px 10px #000000;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.calculator form input:hover {
+    background: #0d7377;
+    transform: scale(1.05);
+}
+
+form .display {
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px 0;
+}
+
+form .display input {
+    text-align: right;
+    flex: 1;
+    font-size: 45px;
+    background: none;
+    color: #00ffcc;
+    box-shadow: none;
+    border-bottom: 2px solid #00ffcc;
+}
+
+form input.equal {
+    width: 145px;
+    background: #0d7377;
+    box-shadow: 0px 0px 20px 5px #00ffcc;
+}
+
+form input.operator {
+    color: #f29e4c;
+}
+
+form input.operator:hover {
+    background: #f29e4c;
+    color: #0a0f14;
+}
+
+/* Estilos para as orelhas de coelho */
+.bunny-ears {
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-bottom: 50px solid white; /* Cor das orelhas em branco */
+    position: absolute;
+    display: none;
+}
+
+.bunny-ears:first-child {
+    left: -40px; /* Aumente o valor negativo para mover mais para a esquerda */
+    top: -60px;  /* Aumente o valor negativo para mover mais para cima */
+    transform: rotate(-20deg); /* Ajuste o ângulo de rotação */
+}
+
+
+.bunny-ears:last-child {
+    right: 10px;  /* Reduza o valor positivo para mover mais para a esquerda */
+    top: -60px;   /* Aumente o valor negativo para mover mais para cima */
+    transform: rotate(20deg); /* Ajuste o ângulo de rotação */
+}
+
+
+/* Exibir orelhas no tema rosa */
+.pink-theme .bunny-ears {
+    display: block;
+}
+
+
+/* Tema rosa */
+.pink-theme .calculator {
+    background-color: rgb(165, 96, 96);
+    box-shadow: 0px 0px 30px 5px #f5c6c6; /* Glow bege */
+}
+
+.pink-theme .calculator form input {
+    background-color: transparent;
+    color: #fff;
+    box-shadow: -8px -8px 15px rgba(255, 255, 255, 0.1), 5px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.pink-theme .calculator form input.operator {
+    color: #33ffd8;
+}
+
+.pink-theme .calculator form input.equal {
+    color: #33ffd8;
+    background-color: transparent;
+    box-shadow: -8px -8px 15px rgba(255, 255, 255, 0.1), 5px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Tema Minimalistic */
+.minimalistic-theme .calculator {
+    background-color: #ccc; /* Cinza claro */
+    color: #000; /* Preto */
+    box-shadow: 5px 30px 30px 5px #137297;
+}
+
+.minimalistic-theme .calculator form input {
+    background: #fff; /* Branco */
+    color: #000; /* Preto */
+    box-shadow: inset -1px -1px 3px #ddd, inset 1px 1px 3px #bbb;
+}
+
+.minimalistic-theme .calculator form input:hover {
+    background: #e0e0e0; /* Cor de fundo mais clara */
+    transform: scale(1.05);
+}
+
+.minimalistic-theme form .display input {
+    border-bottom: 2px solid #000;
+}
+
+.minimalistic-theme form input.equal {
+    background: #888; /* Cinza */
+    box-shadow: 0px 0px 5px 1px #555;
+    color: #fff; /* Branco */
+}
+
+.minimalistic-theme .calculator form input.operator {
+    color: #555; /* Cinza escuro */
+}
+
+.minimalistic-theme .bunny-ears {
+    display: none;
+}
